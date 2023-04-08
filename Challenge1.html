@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+    <script>
+        /*
+          _______        ____                    ___
+         / ___/ /  ___ _/ / /__ ___  ___ ____   <  /
+        / /__/ _ \/ _ `/ / / -_) _ \/ _ `/ -_)  / / 
+        \___/_//_/\_,_/_/_/\__/_//_/\_, /\__/  /_/  
+                                   /___/     
+        */
+
+        // Reversing text
+        // For the following activity create a string that contains
+        // the reversed string found in variable "text".
+        // Save this reversed string into the variable "newText"
+        // NOTE: the characters of text can be accessed like an array,
+        // text[4], would contain the character "o".
+
+        let text = "hello world!";
+        let newText = "";
+        // code goes here vvvv
+        for (let i = 0; i < text.length; i++){
+            newText += text[text.length-1-i];
+        }
+        console.log(newText)
+       
+        // expected output to console:
+        // >> !dlrow olleh
+
+        // extension
+        // Write code that reverses each word, but keeps the words in order:
+        // expected output to console:
+        // >> olleh !dlrow
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
