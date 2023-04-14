@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3</title>
+    <script>
+        //    _____ _           _ _                         ____  
+        //   / ____| |         | | |                       |___ \ 
+        //  | |    | |__   __ _| | | ___ _ __   __ _  ___    __) |
+        //  | |    | '_ \ / _` | | |/ _ \ '_ \ / _` |/ _ \  |__ < 
+        //  | |____| | | | (_| | | |  __/ | | | (_| |  __/  ___) |
+        //   \_____|_| |_|\__,_|_|_|\___|_| |_|\__, |\___| |____/ 
+        //                                      __/ |             
+        //                                     |___/        
+        // Challenge 3
+        // Goldilocks
+        // For a given array (ie: [2, 5, 6, 1, 2, 9, 2, 9, 9])
+        // determine the average value of the numbers in the array
+        // For each number in the array
+        // print to the console "too small!" if the number is below the average
+        // print to the console "too big!" if the number is above the average
+        // print to the console "just right!" if the number is exactly equal to the average
+        // expected output for the array above:
+        // too small!   
+        // just right!
+        // too big!
+        // too small!
+        // too small!
+        // too big!
+        // too small!
+        // too big!
+        // too big!
+        let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+        let average = 0;
+        for (let i = 0; i < array.length; i++){
+            average+=array[i];
+        }
+        average /= array.length;
+        
+        for (let i = 0; i < array.length; i++){
+            if (array[i] === average){
+                console.log("just right!")
+            }
+            else if (array[i] > average){
+                console.log("too big!")
+            }
+            else{
+                console.log("too small!")
+            }
+        }
+
+        // EXTENSION
+        // for a given array, determine what integer can be added to the end of the array
+        // such that the average of the values of the array including this new number is an integer 
+        // expected output
+        // for the array [1, 1, 2];
+        // answer -> 4
+        let sum = 0;
+        let arr = [1,4,2,5,6,909,1];
+        for (let i = 0; i<arr.length; i++){
+            sum += arr[i];
+        }
+        let n = Math.floor(sum/arr.length);
+        while ((sum+n)%(arr.length+1) !== 0){
+            n++;
+        }
+        console.log(n);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
