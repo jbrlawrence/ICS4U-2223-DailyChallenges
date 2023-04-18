@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+    <script>
+        //   _                       __
+        //  / `/_ _  //_  _  _  _   /_ 
+        // /_,/ //_|///_'/ //_//_' ._/ 
+        //                  _/                    _|  
+        // Challenge 5
+        // 
+        // Counting up
+        // Write a function that takes in an integer as input.
+        // The function will have no return value.
+        // The function will print to the console the string "1"
+        // enough times to add up to the input value.
+        // ie if the input is 3 the output will be "1 1 1"
+        // if the input is 5 the output will be "5 5 5 5 5"
+        function countUp(count) {
+            let string = "";
+            for (let i = 0; i < count; i++) {
+                string += "1 ";
+            }
+            console.log(string);
+        }
+        countUp(4);
+
+        // Extension
+        // How to count?
+        // Write a function that takes an integer as an input
+        // The function should print to the console all possible
+        // combinations of possible positive integers that add up to it
+        // ie 3 => 
+        // 3
+        // 1 2
+        // 1 1 1
+        // ie 4 =>
+        // 4
+        // 3 1 
+        // 2 2
+        // 2 1 1
+        // 1 1 1 1
+
+        function countingUp(n){
+            let fullCount = [];
+            // starting recursive call
+            allCount([n,0],0,1,fullCount);
+            // cleaning output and returning
+            return fullCount.sort().reverse();
+        }
+
+        function allCount(n, a, b, f) {
+            // checking if array is monotonically decreasing
+            let dec = true;
+            for (let i = 1; i < n.length; i++) {
+                if (n[i] > n[i - 1]) {
+                    dec = false;
+                }
+            }
+            // if it is decreasing add to the list of valid counts
+            if (dec) {
+                f.push(n);
+            }
+            // check if the first number of the pair examined is greater than 1 (to be split)
+            if (n[a] > 1) {
+                // copy the array (slice) increase position a, decrease position b 
+                let left = n.slice();
+                left[a]--;
+                left[b]++;
+                // recursive call to run with new array
+                allCount(left, a, b, f);
+            }
+            // check if the second number of the pair examined is greater than 1 (to be split) 
+            if (n[b] > 1) {
+                // copy the array
+                let left = n.slice();
+                // decrease the last element by 1
+                left[left.length - 1]--;
+                // add one to the the end of the array.
+                left.push(1);
+                // recursively call, shifted right by one for the examined pair
+                allCount(left, a + 1, b + 1, f);
+            }
+        }
+
+
+        console.log(countingUp(5));
+
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
