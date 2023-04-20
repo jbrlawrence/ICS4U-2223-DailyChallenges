@@ -21,6 +21,21 @@
         // note, remember characters in a string can be accessed 
         // like elements in an array
         
+
+        // function brackets(string){
+        //     let counter = 0;
+        //     for (let i = 0; i<string.length; i++) {
+        //         if (string[i]=="(") {
+        //             counter++;
+        //         }
+        //         else if (string[i]==")") {
+        //             counter++;
+        //         }
+        //     }
+        //     return counter;
+        // }
+        // let x = brackets("hell0 (here is a thing)()[]");
+        // console.log(x);
         
         
         // Extension
@@ -37,6 +52,41 @@
         // "(asdf()j)k" => true
         // "((asf)a" => false 
         // "(hello (here are some brackets))() (and more!)(())()" => true
+
+        function brackets(string){
+            let counter = 0;
+            let array = [];
+            let array1 = [];
+            let array2 = [];
+            let boolean;
+            for (let i = 0; i<string.length; i++) {
+                if (string[i]=="(") {
+                    counter++;
+                    array.push[string[i]];
+                    array1.push[string[i]];
+                }
+                else if (string[i]==")") {
+                    counter++;
+                    array.push[string[i]];
+                    array2.push[string[i]];
+                }
+            }
+            if (array[0] = ")") {
+                boolean = false;
+            }
+            if (array[array.length] = "(") {
+                boolean = false;
+            }
+            if (array1.length !== array2.length) {
+                boolean = false;
+            }
+            else if (array1.length == array2.length) {
+                boolean = true; 
+            }
+            return boolean;
+        }
+        let x = brackets("hell0 (here is a thing)()[]");
+        console.log(x);
 
         </script>
 </head>

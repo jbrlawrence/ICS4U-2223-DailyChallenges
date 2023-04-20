@@ -10,7 +10,7 @@
         //    _____ _           _ _                         ____  
         //   / ____| |         | | |                       |___ \ 
         //  | |    | |__   __ _| | | ___ _ __   __ _  ___    __) |
-        //  | |    | '_ \ / _` | | |/ _ \ '_ \ / _` |/ _ \  |__ < 
+        //  | |    | '_ \ / _` | | |/ _ \ '_  \/ _` |/ _ \  |__ < 
         //  | |____| | | | (_| | | |  __/ | | | (_| |  __/  ___) |
         //   \_____|_| |_|\__,_|_|_|\___|_| |_|\__, |\___| |____/ 
         //                                      __/ |             
@@ -34,6 +34,23 @@
         // too big!
         // too big!
         let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+        let mean = 0;
+        for (let i = 0; i<array.length; i++) {
+           mean = array[i]+mean;
+        }
+        mean = mean/array.length;
+
+        for (let i = 0; i<array.length; i++) {
+            if (array[i]<mean) {
+                console.log("too small!");
+            }
+            else if (array[i]>mean) {
+                console.log("too big!");
+            }
+            else {
+                console.log("just right");
+            }
+        }
 
         // EXTENSION
         // for a given array, determine what integer can be added to the end of the array
@@ -41,6 +58,18 @@
         // expected output
         // for the array [1, 1, 2];
         // answer -> 4
+
+
+        // 
+        // 
+        //  __
+        // |__|   __    __
+        //  __  /    \/    \ __     __  _____  __   __
+        // |  | \          / \  \  /  //  _  \|  | |  |
+        // |  |   \_    _/    \  \/  /|  (_)  |  |_|  | 
+        // |__|      \/        \    /  \_____/ \____,_|
+        //                      /  /
+        //                     /__/
 
 
     </script>

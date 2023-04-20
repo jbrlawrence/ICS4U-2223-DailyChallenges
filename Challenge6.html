@@ -24,6 +24,20 @@
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
         
+        function cypher(alp, rot) {
+            let x;
+            for (let i = 0; i<letters.length; i++) {
+                if (letters[i]==alp) {
+                    for (let j = 0; j<rot; j++) {
+                        i++;
+                    }
+                }
+            }
+            console.log(letters[i]);
+        }
+
+        cypher("a", 6);
+        
         
         
 

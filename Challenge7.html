@@ -21,12 +21,27 @@
         // ie input of 2, 4 will return:
         // 2+4, 2-4, 4-2, 2*4, 2/4 and 4/2
         // [6,-2,2,8,0.5,2]
+         function math (A, B) {
+            let answers = [A+B, A-B, A*B, A/B];
+            return answers;
+         }
+         console.log(math(2,4));
 
         // Extension
         // create a function that performs the same operation,
         // but will take in an array of numbers, and return the 
         // results of the possible operations for each pair of
         // numbers in the input array.
+        function math (A, B) {
+            let answers = [A+B, A-B, A*B, A/B];
+            math2(answers());
+
+         }
+         console.log(math(2,4));
+
+         function math2 (A, B, C, D) {
+            
+         }
 
 
         </script>
