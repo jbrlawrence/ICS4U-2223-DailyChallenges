@@ -44,3 +44,5 @@ function ~functionName~ (~input1~, ~input2~){
 
 - Test your function by running running the function with the inputs "a", 8, and cosole logging the output.
 - If done correctly the code should print "i" to the console
+
+[Here is a video of the solution](https://drive.google.com/file/d/1rOowBhrTWrZQ7uzDqN8FDfX-WPfygfxp/view?usp=sharing)
