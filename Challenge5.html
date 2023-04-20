@@ -21,7 +21,14 @@
         // ie if the input is 3 the output will be "1 1 1"
         // if the input is 5 the output will be "1 1 1 1 1"
         
-        
+        let String = "";
+        function counting(a) {
+            for (let i = 0; i < a; i++) {
+                String = String + " 1";
+            }
+            console.log(String);
+        }
+        counting(3);
         
         // Extension
         // How to count?
@@ -39,7 +46,18 @@
         // 2 1 1
         // 1 1 1 1
 
-
+        function countingE(a) {
+            for (let i = 0; i < a; i++) {
+                for (let j = 0; j < a; j++) {
+                    console.log(a);
+                    console.log(`${i} ${a-1}`);
+                    
+                }
+                
+            }
+        }
+        
+        countingE(3);
 
     </script>
 </head>

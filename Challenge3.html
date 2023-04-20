@@ -33,7 +33,26 @@
         // too small!
         // too big!
         // too big!
-        let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+       
+        // let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+        // let average = 0;
+        // for (let i = 0; i < array.length; i++) {
+        //     average = average + array[i];
+        // }
+        // average /= array.length;
+        
+        // for (let i = 0; i < array.length; i++) {
+        //     if (array[i] < average) {
+        //         console.log("too small!");
+        //     }
+        //     if (array[i] > average) {
+        //         console.log("too big!");
+        //     }
+        //     if (array[i] == average) { 
+        //         console.log("just right!");
+        //     }
+        // }
+
 
         // EXTENSION
         // for a given array, determine what integer can be added to the end of the array
@@ -42,6 +61,26 @@
         // for the array [1, 1, 2];
         // answer -> 4
 
+        let arraye = [1, 1, 2];
+        let averageE = 0;
+        let averageE2 = 0;
+        value = 1;
+        for (let i = 0; i < arraye.length; i++) {
+            averageE = averageE + arraye[i];
+        }
+        averageE /= arraye.length;
+
+        while (value !== 0) {
+            averageE2 = (value + averageE)/(arraye.length+1);
+            if (averageE2%1 == 0) {
+                console.log(value);
+                value = 0;
+            }
+                else {
+                    value = value + 1;
+                }
+            }
+        
 
     </script>
 </head>
