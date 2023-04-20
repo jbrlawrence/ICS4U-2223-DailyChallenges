@@ -59,8 +59,20 @@
         // Write a funciton that will return the plain text of the following message:
         // aol dlhaoly pz mpul avkhf
         // knowing that the message contains the word "weather"
-        
+        function decoder(cypherText, knownPlainText){
+            rot = 0;
+            plainText = "";
+            for (let i = 0; i < letters.length; i++){
+                rot = i;
+                plainText = rotString(cypherText, rot);
+                if (plainText.includes(knownPlainText)){
+                    return plainText;
+                }
+            }
+        } 
 
+        console.log(decoder("aol dlhaoly pz mpul avkhf","weather"));
+        
 
     </script>
 </head>
