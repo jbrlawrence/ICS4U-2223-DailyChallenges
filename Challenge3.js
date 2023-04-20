@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 3</title>
- 
-    <script>
-        //    _____ _           _ _                         ____  
-        //   / ____| |         | | |                       |___ \ 
-        //  | |    | |__   __ _| | | ___ _ __   __ _  ___    __) |
-        //  | |    | '_ \ / _` | | |/ _ \ '_ \ / _` |/ _ \  |__ < 
-        //  | |____| | | | (_| | | |  __/ | | | (_| |  __/  ___) |
-        //   \_____|_| |_|\__,_|_|_|\___|_| |_|\__, |\___| |____/ 
-        //                                      __/ |             
-        //                                     |___/        
-        // Challenge 3
+// Challenge 3
         // Goldilocks
         // For a given array (ie: [2, 5, 6, 1, 2, 9, 2, 9, 9])
         // determine the average value of the numbers in the array
@@ -35,7 +17,7 @@
         // too big!
         // too big!
         let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
-        let average = 0;
+let average = 0;
         for (i=0; i < array.length; i++){
 average = average + array [i];
         }
@@ -43,28 +25,19 @@ average = average/ array.length;
 
         for (i=0; i < array.length; i++){
 if (array[i] < average){
-    console.log ("too small!");
+    console.log ("too small");
 }
-else if (array[i] > average){
-    console.log ("too big!");
-}
-else {
-    console.log ("just right!");
+if (array[i] > average){
+    console.log ("too big");
 }
         }
+
+
+
+
         // EXTENSION
         // for a given array, determine what integer can be added to the end of the array
         // such that the average of the values of the array including this new number is an integer 
         // expected output
         // for the array [1, 1, 2];
         // answer -> 4
-
-
-    </script>
-</head>
-
-<body>
-
-</body>
-
-</html>

@@ -21,8 +21,21 @@
         // note, remember characters in a string can be accessed 
         // like elements in an array
         
-        
-        
+        counter = 0;
+        function SallysFunction(banana){
+            for (i=0; i < banana.length; i++){
+                if (banana[i] === "(" ){
+                    counter = counter+1;
+                }
+                if (banana[i] === ")" ){
+                    counter = counter+1;
+                }
+            }
+        }
+        SallysFunction ("hell0 (here is a thing)()[]");
+        console.log(counter);
+
+
         // Extension
         // Bracket balancing
         // Write function that will take a string in as input
