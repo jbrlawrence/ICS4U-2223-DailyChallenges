@@ -19,9 +19,18 @@
         // that are found within the string.
         // example: "hell0 (here is a thing)()[]" => 4
         // note, remember characters in a string can be accessed 
-        // like elements in an array
-        
-        
+        // like elements in an array 
+        function clash (strung){
+            let arr = [];
+            for (i = 0; i < strung.length; i++){
+                if (strung[i]=="("||strung[i]==")"||strung[i]=="["||strung[i]=="]"){
+                    arr.push(i);
+                }
+            }
+            return arr.length;
+        }
+        console.log(clash("([][][hello!)(I'm whispering to you)"));
+
         
         // Extension
         // Bracket balancing

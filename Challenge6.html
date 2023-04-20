@@ -24,8 +24,19 @@
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
         
+        function Beeline (string,rotation){
+            let temp;
+            for (i = 0; i < string.length; i++){
+                for (j = 0; j < letters.length; j++){
+                    string[i] = temp;
+                    temp = letters[(i+rotation) % 26];
+                }
+            }
+            console.log(string);
+        }
         
-        
+         Beeline("Water",5);
+
 
 
         // Extension 

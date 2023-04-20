@@ -22,12 +22,29 @@
         // 2+4, 2-4, 4-2, 2*4, 2/4 and 4/2
         // [6,-2,2,8,0.5,2]
 
+        function Mathtime (a,b){
+            let array = [];
+            array.push(a+b,a-b,a*b,a/b,b/a);
+            return array; 
+        }
+        console.log(Mathtime(2,3));
+
         // Extension
         // create a function that performs the same operation,
         // but will take in an array of numbers, and return the 
         // results of the possible operations for each pair of
         // numbers in the input array.
 
+        function Mathtime ([]){
+            let array = [];
+            for(i=0;i< Mathtime.length; i++){
+                for(j=0; j<Mathtime.length; j++){
+                array.push(Mathtime[i]+Mathtime[i+j],Mathtime[i]- Mathtime[i+j],Mathtime[i]*Mathtime[i+j],Mathtime[i]/ Mathtime[i+j],Mathtime[i+j]/Mathtime[i]);
+                }
+            }
+            return array; 
+        }
+        console.log(Mathtime([]));
 
         </script>
 </head>
