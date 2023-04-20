@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 6</title>
+    <script defer>
+        //   _                       __
+        //  / `/_ _  //_  _  _  _   /_ 
+        // /_,/ //_|///_'/ //_//_' /_/ 
+        //                  _/                    _|  
+        // Challenge 6
+        // 
+        // Cypher text
+        // A rotation cypher is one in which  a letter is replaced by a letter "rotated" through the alphabet
+        // A "rotation" of 1 would result in the letter A becoming a B, B becoming a C ... Z becoming an A.
+        // A rotation of 13 would change "hello world" into "uryyb jbeyq"
+        // Create a function that takes in two inputs, a single character and a positive integer
+        // Your function will return the rotation of the input letter by the value of the integer
+        let letters = "abcdefghijklmnopqrstuvwxyz"
+
+        function rotLetter(s, n) {
+                for (let i=0; i < letters.length; i++){
+                    if (s === letters[i]){
+                        return letters[(i+n)%letters.length];
+                    }
+                }
+        }
+        console.log(rotLetter("z",1));
+
+        
+
+
+        // Extension 1 
+        // Full message
+        // Using the function created above, create a function that takes in 
+        // an entire string and converts it to its cypher form.
+        // The inputs should be the rotation number and the string to encypher
+        // The return value should be the cypher string.
+        function rotString(s, n){
+            let cypherText = ""
+            for (let i = 0; i<s.length; i++){
+                let letter;
+                
+                letter = rotLetter(s[i], n)
+                if (!letter){
+                    letter = " "
+                }
+                cypherText += letter;
+            }
+            return cypherText;
+        }
+
+        console.log(rotString("the weather is fine today",7))
+
+        // Extension extension
+        // Write a funciton that will return the plain text of the following message:
+        // aol dlhaoly pz mpul avkhf
+        // knowing that the message contains the word "weather"
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
