@@ -20,7 +20,18 @@
         // example: "hell0 (here is a thing)()[]" => 4
         // note, remember characters in a string can be accessed 
         // like elements in an array
-        
+        function brackets(pineapple){
+            let bracketCounter = 0;
+            let array = pineapple;
+            for(let i = 0; i < array.length; i++){
+                if (array[i] === "(" || array[i] === ")"){
+                    bracketCounter = bracketCounter + 1;
+                }
+            }
+            console.log("number of brackets " + bracketCounter);
+        }
+
+        brackets("hell0 (here is a thing)()[]");
         
         
         // Extension
@@ -37,6 +48,33 @@
         // "(asdf()j)k" => true
         // "((asf)a" => false 
         // "(hello (here are some brackets))() (and more!)(())()" => true
+
+        function bracketsE(pineappleE){
+            let leftbracketCounter = 0;
+            let rightbracketCounter = 0;
+            let array = pineappleE;
+            let matching = false;
+    
+            for(let i = 0; i < array.length; i++){
+                if (array[i] === "("){
+                    leftbracketCounter = leftbracketCounter + 1;
+                }
+                else if(array[i] === ")"){
+                    rightbracketCounter = rightbracketCounter + 1;
+                }
+            }
+            if(rightbracketCounter === leftbracketCounter){
+                matching = true;
+                console.log("true");
+            }
+            else{
+                matching = false;
+                console.log("false");
+            }
+
+        }
+
+        bracketsE(")("); // ?? :(
 
         </script>
 </head>

@@ -34,6 +34,26 @@
         // too big!
         // too big!
         let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+        let average = 0;
+
+        for(let i = 0; i < array.length; i++){
+            average = average + array[i]; 
+        }
+        average = average/array.length;
+        console.log(average);
+
+        for(let o = 0; o < array.length; o++){
+            if(array[o] < average){
+                console.log(array[o] + " is too small");
+            }
+            else if (array[o] > average){
+                console.log(array[o] + " is too big");
+            }
+            else{
+                console.log(array[o] + " is just right");
+            }
+        }
+
 
         // EXTENSION
         // for a given array, determine what integer can be added to the end of the array
