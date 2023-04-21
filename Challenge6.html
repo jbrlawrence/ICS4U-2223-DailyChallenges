@@ -60,7 +60,7 @@
                     }
                 }
             }
-            return newCharacter;
+            return newWord;
         }
         console.log(betterCypher("hello world", 5));
 
@@ -68,25 +68,32 @@
         // Write a function that will return the plain text of the following message:
         // aol dlhaoly pz mpul avkhf
         // knowing that the message contains the word "weather"
-        let messsage = "aol dlhaoly pz mpul avkhf";
+        let message = "aol dlhaoly pz mpul avkhf";
         let word = "weather";
-        function decypher(message, plainText){
-            let newWord = "";
-            for (let j = 0; j < message.length; j++){
-                if (word[j] === " "){
-                        newWord += " ";
+        function decypher(encryptedText, plainText, rotation){
+            let decrypted = "";
+            for (let j = 0; j < encryptedText.length; j++){
+                if (encryptedText[j] === " "){
+                    decrypted += " ";
                 }
                 for (let i = 0; i < letters.length; i++){
-                    if (word[j] === letters[i]){
+                    if (encryptedText[j] === letters[i]){
                         if (i + rotation < 26){
-                            newWord += letters[i+rotation];
+                            decrypted += letters[i+rotation];
                         } else if (i + rotation >= 26){
-                            newWord += letters[(i+rotation)%26];
+                            decrypted += letters[(i+rotation)%26];
                         }
                     }
+                    
                 }
             }
+            if (decrypted.includes(plainText)){
+                console.log(decrypted);
+            } else {
+                decypher(decrypted, word, 1);
+            }
         }
+        decypher(message, word, 1);
 
         // Extension extension extension - what is the historical significance of the
         // word "weather" in the previous example? and how does it relate to this task?
