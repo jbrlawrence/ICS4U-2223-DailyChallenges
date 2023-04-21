@@ -13,6 +13,7 @@
         //  //        //   / / //   / / // // //       //   / / ((___/ / //           / ____/   
         // ((____/ / //   / / ((___( ( // // ((____   //   / /   //__   ((____       / /____    
 
+        // Daily Challenge 2
         // Building a pyramid
         // Given a number saved as a variable
         // print out an increasing number of integers that count up to this number
@@ -21,8 +22,12 @@
         // [1, 2]
         // [1, 2, 3]
         // [1, 2, 3, 4]
-
-
+        let count = 4;
+        let myArray = [];
+        for (let i = 1; i <= count; i++){
+            myArray.push(i);
+            console.log(myArray);
+        }
 
         // EXTENSION
         // Create a pascal's triangle for a given depth
@@ -37,7 +42,17 @@
         // [1, 6, 15, 20, 15, 6, 1]
         // [1, 7, 21, 35, 35, 21, 7, 1]
         // [1, 8, 28, 56, 70, 56, 28, 8, 1]
-        // [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+        // [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]   
+        let depth = 10;
+        let array = [];
+        for (let i = 0; i < depth; i++){
+            let temp = array.slice();
+            array.push(1);
+            for (let i = 1; i < array.length-1; i++){
+                array[i] = temp[i-1] + temp[i];
+            }
+            console.log(array);
+        }
 
     </script>
 </head>

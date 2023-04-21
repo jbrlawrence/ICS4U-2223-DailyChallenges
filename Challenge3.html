@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 2</title>
+    <title>Challenge 3</title>
+</head>
+
+<body>
     <script>
         //    _____ _           _ _                         ____  
         //   / ____| |         | | |                       |___ \ 
@@ -33,7 +36,26 @@
         // too small!
         // too big!
         // too big!
+        // too small!
+
         let array = [2, 5, 6, 1, 2, 9, 2, 9, 9];
+        let total = 0;
+        let average = 0;
+        for (let i = 0; i < array.length; i++){
+            total += array[i];
+        }
+        average = total/array.length;
+        console.log(average);
+        for (let j = 0; j < array.length; j++){
+            if (array[j] > average){
+                console.log("too big!");
+            } else if (array[j] < average){
+                console.log("too small!");
+            } else {
+                console.log("just right!");
+            }
+        }
+
 
         // EXTENSION
         // for a given array, determine what integer can be added to the end of the array
@@ -41,13 +63,25 @@
         // expected output
         // for the array [1, 1, 2];
         // answer -> 4
-
+        // shouldn't the answer be 0 since 0 is an integer?
+        let array2 = [1, 1, 2];
+        let sum = 0;
+        // set x to 1 since 0 doesn't count in this case?
+        let x = 1;
+        let integer = false;
+        for (let i = 0; i < array2.length; i++){
+            sum += array2[i];
+        }
+        while (!integer){
+            if ((sum + x)%(array2.length + 1) == 0){
+                integer = true;
+            } else {
+                x++;
+            }
+        }
+        console.log(x);
 
     </script>
-</head>
-
-<body>
-
 </body>
 
 </html>
