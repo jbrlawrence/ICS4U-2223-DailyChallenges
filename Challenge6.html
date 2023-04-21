@@ -24,6 +24,29 @@
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
         
+        function cypher(string, rotation) {
+            let newString = "";
+            let stringNumber = 0;
+            
+            for (let j = 0; j < string.length; j++) {
+            for (let i = 0; i < letters.length; i++) {
+                if (string[j] === letters[i]) {
+                    stringNumber = i;
+                }
+                   
+                    if ((stringNumber + rotation) > 25) {
+                         stringNumber = 0 - (26-i);
+                    }
+                    
+            }
+            
+            newString += letters[stringNumber + rotation];
+
+        }
+                
+            console.log(newString);
+    }
+        cypher("a", 54);
         
         
 
