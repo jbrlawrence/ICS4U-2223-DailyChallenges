@@ -21,6 +21,15 @@
         // NOTE: the characters of text can be accessed like an array,
         // text[4], would contain the character "o".
 
+        let text = "hello world!";
+        let newText = "";
+        // code goes here vvvv
+        for (let i = 0; i <text.length; i++){
+            newText = newText+text[text.length-1-i];
+        }
+
+
+        console.log(newText)
        
         // expected output to console:
         // >> !dlrow olleh
@@ -34,7 +43,29 @@
         // Write code that reverses each word, but keeps the words in order:
         // expected output to console:
         // >> olleh !dlrow
-        
+
+        let singleReverse = "";
+        let spacePos = [];
+        for (let i = 0; i < text.length; i++){
+            if (text[i] === " "){
+                spacePos.push(i);
+            }
+        }
+        let startNum = 0;
+        let endNum;
+        for (let i = 0; i < spacePos.length; i++){
+            endNum = spacePos[i];
+            for (let j = endNum-1; j >= startNum; j--){
+                singleReverse += text[j];
+            }
+            singleReverse += " ";
+            startNum = endNum; 
+        }
+        endNum = text.length;
+        for (let j = endNum-1; j >= startNum; j--){
+                singleReverse += text[j];
+            }
+        console.log(singleReverse)
 
     </script>
 </head>
