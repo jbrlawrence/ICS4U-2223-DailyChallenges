@@ -23,10 +23,22 @@
         
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
-        
-        
-        
 
+        function coffeeCup(character, integer){
+            let counter = 0
+            for(let i = 0; i < letters.length; i++){
+                if(letters[i] === character){
+                    if(letters[i] >= 25 || letters[i+integer] >= 25){
+                        console.log(counter + 1);
+                        
+                        //go back to the beginning?
+                    }
+                    console.log(letters[i+integer]);
+                }
+            }
+        }
+
+        coffeeCup("d", 5);
 
         // Extension 
         // Full message
@@ -34,6 +46,23 @@
         // an entire string and converts it to its cypher form.
         // The inputs should be the rotation number and the string to encypher
         // The return value should be the cypher string.
+
+        function coffeeE(phrase, integer){
+            let encryptedphrase = "";
+            for(let i = 0; i < phrase.length; i++){
+                if(phrase[i] === " "){
+                    encryptedphrase += " ";
+                }
+                for(let l = 0; l < letters.length; l++){
+                    if(phrase[i] === letters[l]){
+                        encryptedphrase += letters[l+integer];
+                    }
+                }
+            }
+            console.log(encryptedphrase);
+        }
+
+        coffeeE("garf has a new trenchcoat", 1);
 
 
         // Extension extension

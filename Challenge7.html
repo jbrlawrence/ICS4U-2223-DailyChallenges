@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,6 +21,24 @@
         // ie input of 2, 4 will return:
         // 2+4, 2-4, 4-2, 2*4, 2/4 and 4/2
         // [6,-2,2,8,0.5,2]
+        
+        let geraldeanR = [];
+        function geraldean(input1, input2){
+
+            geraldeanR.push(input1+input2);
+            geraldeanR.push(input1-input2);
+            geraldeanR.push(input1/input2);
+            geraldeanR.push(input1*input2);
+            geraldeanR.push(input2+input1);
+            geraldeanR.push(input2-input1);
+            geraldeanR.push(input2*input1);
+            geraldeanR.push(input2/input1);
+
+            console.log(geraldeanR);
+        }
+
+        geraldean(2,4);
+
 
         // Extension
         // create a function that performs the same operation,
