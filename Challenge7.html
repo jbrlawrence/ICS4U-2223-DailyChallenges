@@ -22,6 +22,24 @@
         // 2+4, 2-4, 4-2, 2*4, 2/4 and 4/2
         // [6,-2,2,8,0.5,2]
 
+        math (2, 1);
+
+        function math (none, ntwo){
+
+            let answers = [];
+
+            answers.push(none+ntwo);
+            answers.push(none-ntwo);
+            answers.push(ntwo-none);
+            answers.push(none*ntwo);
+            answers.push(none/ntwo);
+            answers.push(ntwo/none);
+
+            console.log(answers);
+            return(answers);
+            
+        }
+
         // Extension
         // create a function that performs the same operation,
         // but will take in an array of numbers, and return the 
