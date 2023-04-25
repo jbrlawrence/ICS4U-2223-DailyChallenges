@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 6</title>
+    <title>Challenge 7</title>
     <script defer>
         //   _                       __
         //  / `/_ _  //_  _  _  _     / 
@@ -21,13 +21,32 @@
         // ie input of 2, 4 will return:
         // 2+4, 2-4, 4-2, 2*4, 2/4 and 4/2
         // [6,-2,2,8,0.5,2]
+        function numbers(input1, input2){
+            let array = [];
+            array.push(input1+input2, input1-input2, input2-input1, input1*input2, input1/input2, input2/input1);
+            console.log(array);
+        }
+        numbers(2,4);
 
         // Extension
         // create a function that performs the same operation,
         // but will take in an array of numbers, and return the 
         // results of the possible operations for each pair of
         // numbers in the input array.
-
+        function operations(array){
+            let newArray = [];
+            for (let i = 0; i < array.length; i++){
+                for (let j = 0; j < array.length; j++){
+                    if (i != j && j > i){
+                        array[i] + array[j];
+                        newArray.push(array[i]+array[j], array[i]-array[j], array[j]-array[i], array[i]*array[j], array[i]/array[j], array[j]/array[i]);
+                    }
+                }
+            }
+            console.log(newArray);
+        }
+        let yay = [4, 2, 8];
+        operations(yay);
 
         </script>
 </head>

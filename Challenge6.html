@@ -23,10 +23,20 @@
         
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
-        
-        
-        
-
+        function cypher(character, rotation){
+            let newCharacter = 0;
+            for (let i = 0; i < letters.length; i++){
+                if (letters[i] === character){
+                    if (i + rotation < 26){
+                        newCharacter = character.replace(character,letters[i+rotation]);
+                    } else if (i + rotation >= 26){
+                        newCharacter = character.replace(character,letters[rotation-(letters.length-i)]);
+                    }
+                }
+            }
+            return newCharacter;
+        }
+        console.log(cypher("z", 3));
 
         // Extension 
         // Full message
@@ -34,13 +44,56 @@
         // an entire string and converts it to its cypher form.
         // The inputs should be the rotation number and the string to encypher
         // The return value should be the cypher string.
-
+        function betterCypher(word, rotation){
+            let newWord = "";
+            for (let j = 0; j < word.length; j++){
+                if (word[j] === " "){
+                    newWord += " ";
+                }
+                for (let i = 0; i < letters.length; i++){
+                    if (word[j] === letters[i]){
+                        if (i + rotation < 26){
+                            newWord += letters[i+rotation];
+                        } else if (i + rotation >= 26){
+                            newWord += letters[(i+rotation)%26];
+                        }
+                    }
+                }
+            }
+            return newWord;
+        }
+        console.log(betterCypher("hello world", 5));
 
         // Extension extension
         // Write a function that will return the plain text of the following message:
         // aol dlhaoly pz mpul avkhf
         // knowing that the message contains the word "weather"
-
+        let message = "aol dlhaoly pz mpul avkhf";
+        let word = "weather";
+        function decypher(encryptedText, plainText, rotation){
+            let decrypted = "";
+            for (let j = 0; j < encryptedText.length; j++){
+                if (encryptedText[j] === " "){
+                    decrypted += " ";
+                }
+                for (let i = 0; i < letters.length; i++){
+                    if (encryptedText[j] === letters[i]){
+                        if (i + rotation < 26){
+                            decrypted += letters[i+rotation];
+                        } else if (i + rotation >= 26){
+                            decrypted += letters[(i+rotation)%26];
+                        }
+                    }
+                    
+                }
+            }
+            if (decrypted.includes(plainText)){
+                console.log(decrypted);
+            } else {
+                decypher(decrypted, word, 1);
+            }
+        }
+        decypher(message, word, 1);
 
         // Extension extension extension - what is the historical significance of the
         // word "weather" in the previous example? and how does it relate to this task?

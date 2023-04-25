@@ -20,9 +20,20 @@
         // example: "hell0 (here is a thing)()[]" => 4
         // note, remember characters in a string can be accessed 
         // like elements in an array
-        
-        
-        
+        let string = "hell0 (here is a thing)()[]";
+        let counter = 0;
+        function bracketCounting(stringInput){
+            for (let i = 0; i < stringInput.length; i++){
+                if (stringInput[i] === ")" || stringInput[i] === "("){
+                    counter ++;
+                }
+            }
+            console.log(counter);
+        }
+        bracketCounting(string);
+
+
+
         // Extension
         // Bracket balancing
         // Write function that will take a string in as input
@@ -37,6 +48,29 @@
         // "(asdf()j)k" => true
         // "((asf)a" => false 
         // "(hello (here are some brackets))() (and more!)(())()" => true
+
+        let string2 = "(asdf()j)k";
+        let leftBracketCounter = 0;
+        let rightBracketCounter = 0;
+        let matching = false;
+        let complete = true;
+        function bracketBalancing(stringInput){
+            for (let i = 0; i < stringInput.length; i++){
+                if (stringInput[i] === "("){
+                    leftBracketCounter++; 
+                } else if (stringInput[i] === ")"){
+                    rightBracketCounter++;
+                }
+                if (stringInput[0] === ")" || stringInput[stringInput.length] === "("){
+                    complete = false;
+                }
+            }
+            if (leftBracketCounter === rightBracketCounter && complete){
+                matching = true;
+            }
+            console.log(matching);
+        }
+        bracketBalancing(string2);
 
         </script>
 </head>
