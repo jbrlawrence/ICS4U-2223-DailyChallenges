@@ -24,8 +24,18 @@
         // helpful array of characters (string) in alphabetical order
         let letters = "abcdefghijklmnopqrstuvwxyz";
         
+        function rotationcypher(character, rotation){
+            sequence = letters.indexOf(character); 
+
+            if((sequence+rotation)<25){
+                return letters[sequence+rotation];
+            }
+            else{
+                return letters[(sequence+rotation)-26];
+             }
+        }
         
-        
+        //console.log(rotationcypher("z",1));
 
 
         // Extension 
@@ -35,6 +45,25 @@
         // The inputs should be the rotation number and the string to encypher
         // The return value should be the cypher string.
 
+        function cyphermessage(message, rotation){
+            cyphered ="";
+            sequence = [];
+            for(i=0; i<message.length; i++){
+            sequence[i] = letters.indexOf(message[i]); 
+
+             if((sequence[i]+rotation)<25){
+                  cyphered = cyphered + letters[sequence[i]+rotation];
+             }
+                else{
+                cyphered = cyphered + letters[(sequence[i]+rotation)-26];
+            }
+
+            }
+
+            return cyphered;
+        }
+        
+        console.log(cyphermessage("maze",2));
 
         // Extension extension
         // Write a function that will return the plain text of the following message:
